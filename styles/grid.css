@@ -1,0 +1,438 @@
+body, h1 {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.photo {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.1);
+}
+
+.photo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+/* Task 7: Holy Grail Layout - Grid Implementation */
+
+.container-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.container-grid .sidebar {
+    background-color: #ddd;
+    padding: 15px;
+}
+
+.container-grid .content {
+    background-color: #eee;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .container-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* 8 */
+.ecommerce-container {
+    display: grid;
+    grid-template-areas: "sidebar main";
+    grid-template-columns: 20% 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #f4f4f4;
+    padding: 15px;
+}
+
+.product-grid {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    margin: 5px 0;
+}
+
+.product-card p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.product-card button {
+    padding: 8px 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .ecommerce-container {
+        grid-template-areas:
+            "main"
+            "sidebar";
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    /* Task 9: Dashboard Layout */
+
+.dashboard-header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+.dashboard-sidebar {
+    background-color: #f2f2f2;
+    padding: 15px;
+    position: fixed;
+    width: 220px;
+    height: 100%;
+}
+
+.dashboard-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard-sidebar li {
+    margin: 15px 0;
+}
+
+.dashboard-main {
+    margin-left: 240px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.dashboard-content {
+    background-color: #e2e2e2;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .dashboard-main {
+        margin-left: 0;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+}
+/* Task 11: Responsive CSS Grid Magazine Layout */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.mag-header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.magazine-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas:
+        "featured featured sidebar"
+        "story1 story2 sidebar"
+        "story3 story3 sidebar";
+    gap: 15px;
+    padding: 20px;
+}
+
+.featured {
+    grid-area: featured;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.story:nth-of-type(1) { grid-area: story1; }
+.story:nth-of-type(2) { grid-area: story2; }
+.story:nth-of-type(3) { grid-area: story3; }
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #ddd;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+article img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+article h2 {
+    margin-bottom: 10px;
+}
+
+article p {
+    font-size: 16px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .magazine-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "featured featured"
+            "story1 story2"
+            "story3 sidebar";
+    }
+
+    article p {
+        font-size: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .magazine-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "featured"
+            "story1"
+            "story2"
+            "story3"
+            "sidebar";
+    }
+
+    article p {
+        font-size: 14px;
+    }
+}
+/* /* 13  */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card {
+    background-color: #3498db;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+}
+/* Task 16:  */
+body{
+margin:0;
+font-family:Arial;
+background:#f4f4f4;
+}
+
+.landing-header{
+background:#2c3e50;
+color:white;
+padding:15px;
+text-align:center;
+}
+
+.nav-menu{
+list-style:none;
+padding:0;
+margin:10px 0;
+}
+
+.nav-menu li{
+padding:8px 0;
+}
+
+.hero{
+text-align:center;
+padding:40px 20px;
+background:#3498db;
+color:white;
+}
+
+.hero button{
+padding:10px 20px;
+border:none;
+background:white;
+color:#3498db;
+font-weight:bold;
+cursor:pointer;
+}
+
+.features{
+padding:20px;
+}
+
+.feature{
+background:white;
+padding:20px;
+margin-bottom:15px;
+border-radius:8px;
+text-align:center;
+}
+
+.landing-footer{
+text-align:center;
+padding:15px;
+background:#2c3e50;
+color:white;
+}
+
+/* Tablet */
+@media(min-width:768px){
+
+.nav-menu{
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.features{
+display:flex;
+gap:20px;
+}
+
+.feature{
+flex:1;
+margin-bottom:0;
+}
+
+}
+
+/* Desktop */
+@media(min-width:1024px){
+
+.hero{
+padding:80px;
+}
+
+.hero h2{
+font-size:40px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+}

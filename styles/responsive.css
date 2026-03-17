@@ -1,0 +1,223 @@
+body{
+font-family:Arial;
+margin:0;
+padding:0;
+background:#ecf0f1;
+}
+
+.table-container{
+max-width:1000px;
+margin:40px auto;
+background:white;
+padding:20px;
+border-radius:8px;
+}
+
+h1{
+text-align:center;
+}
+
+.responsive-table{
+width:100%;
+border-collapse:collapse;
+}
+
+.responsive-table th,
+.responsive-table td{
+border:1px solid #ccc;
+padding:12px;
+text-align:left;
+}
+
+.responsive-table th{
+background:#3498db;
+color:white;
+}
+
+@media(max-width:768px){
+
+.responsive-table thead{
+display:none;
+}
+
+.responsive-table tr{
+display:block;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:8px;
+padding:10px;
+background:#f9f9f9;
+}
+
+.responsive-table td{
+display:flex;
+justify-content:space-between;
+padding:8px 0;
+border:none;
+border-bottom:1px solid #ddd;
+}
+
+.responsive-table td::before{
+content:attr(data-label);
+font-weight:bold;
+}
+
+.responsive-table td:last-child{
+border-bottom:none;
+}
+
+}
+/* Task 16:  */
+body{
+margin:0;
+font-family:Arial;
+}
+
+.dashboard{
+display:grid;
+grid-template-areas:
+"header"
+"sidebar"
+"main"
+"footer";
+grid-template-columns:1fr;
+}
+
+.header{
+grid-area:header;
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.sidebar{
+grid-area:sidebar;
+background:#34495e;
+color:white;
+padding:20px;
+}
+
+.sidebar ul{
+list-style:none;
+padding:0;
+}
+
+.sidebar li{
+margin-bottom:10px;
+}
+
+.main{
+grid-area:main;
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
+padding:20px;
+}
+
+.card{
+background:#ecf0f1;
+padding:40px;
+text-align:center;
+border-radius:8px;
+}
+
+.footer{
+grid-area:footer;
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+@media(min-width:768px){
+
+.dashboard{
+grid-template-areas:
+"header header"
+"sidebar main"
+"footer footer";
+grid-template-columns:220px 1fr;
+}
+
+.main{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(min-width:1024px){
+
+.main{
+grid-template-columns:1fr 1fr 1fr;
+}
+
+}
+/* Task 18: Responsive Portfolio Layout */
+
+.portfolio-header{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.portfolio-nav{
+list-style:none;
+padding:0;
+margin-top:10px;
+}
+
+.portfolio-nav li{
+padding:8px;
+}
+
+.portfolio-hero{
+background:#3498db;
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+.portfolio-projects{
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
+padding:20px;
+}
+
+.project-card{
+background:#ecf0f1;
+padding:40px;
+text-align:center;
+border-radius:8px;
+}
+
+.portfolio-footer{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+@media (min-width:768px){
+
+.portfolio-nav{
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.portfolio-projects{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media (min-width:1024px){
+
+.portfolio-projects{
+grid-template-columns:1fr 1fr 1fr;
+}
+
+}

@@ -1,0 +1,91 @@
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header, .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.sidebar {
+    float: left;
+    width: 25%;
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.content {
+    float: left;
+    width: 70%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.float-image {
+    float: left;
+    margin: 0 15px 15px 0;
+    max-width: 100%;
+}
+
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media (max-width: 768px) {
+    .sidebar, .content {
+        float: none;
+        width: 100%;
+    }
+    .float-image {
+        float: none;
+        display: block;
+        margin: 15px auto;
+    }
+}
+/* Task 7: Holy Grail Layout - Float Implementation */
+
+.container-float {
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #ddd;
+    padding: 15px;
+    float: left;
+    margin-right: 20px;
+}
+
+.sidebar.right {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.content {
+    overflow: hidden;
+    background-color: #eee;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .container-float, .sidebar, .content {
+        float: none;
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+}

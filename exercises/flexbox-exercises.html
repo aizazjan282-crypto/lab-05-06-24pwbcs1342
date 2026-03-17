@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Navigation System</title>
+<link rel="stylesheet" href="../styles/flexbox.css">
+</head>
+<body>
+
+<header class="header">
+<div class="logo">MySite</div>
+<nav class="nav">
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li class="dropdown">
+<a href="#">Services</a>
+<ul class="dropdown-menu">
+<li><a href="#">Web Design</a></li>
+<li><a href="#">SEO</a></li>
+<li><a href="#">Marketing</a></li>
+</ul>
+</li>
+<li><a href="#">Contact</a></li>
+</ul>
+<div class="hamburger">
+<div></div>
+<div></div>
+<div></div>
+</div>
+</nav>
+</header>
+
+<aside class="sidebar">
+<ul>
+<li><a href="#">Dashboard</a></li>
+<li><a href="#">Profile</a></li>
+<li><a href="#">Settings</a></li>
+<li><a href="#">Logout</a></li>
+</ul>
+</aside>
+
+<main class="content">
+<h1>Flexbox Navigation System</h1>
+<p>This page demonstrates horizontal navigation, vertical sidebar, dropdowns, and mobile hamburger menu.</p>
+</main>
+
+<script>
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+navLinks.classList.toggle("nav-active");
+hamburger.classList.toggle("toggle");
+});
+</script>
+
+</body>
+</html>
+<!-- Task 5: Flexbox Card Layout - Responsive Card Layout Using Flexbox -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5: Flexbox Card Layout</title>
+    <link rel="stylesheet" href="../styles/flexbox.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Flexbox Card Layout</h1>
+    </header>
+
+    <main class="card-container">
+        <div class="card">
+            <h2>Card 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button>Action</button>
+        </div>
+        <div class="card">
+            <h2>Card 2</h2>
+            <p>Short content.</p>
+            <button>Action</button>
+        </div>
+        <div class="card">
+            <h2>Card 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+            <button>Action</button>
+        </div>
+        <div class="card">
+            <h2>Card 4</h2>
+            <p>Another card with moderate content.</p>
+            <button>Action</button>
+        </div>
+    </main>
+</body>
+</html>
+/* Task 12:  */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Flexbox Form</title>
+<link rel="stylesheet" href="../styles/flexbox.css">
+</head>
+<body>
+
+<div class="form-container">
+<h1>Registration Form</h1>
+<form>
+
+<div class="form-section">
+<label for="name">Name</label>
+<input type="text" id="name" placeholder="Enter your name">
+</div>
+
+<div class="form-section">
+<label for="email">Email</label>
+<input type="email" id="email" placeholder="Enter your email">
+</div>
+
+<div class="form-section">
+<label for="password">Password</label>
+<input type="password" id="password" placeholder="Enter password">
+</div>
+
+<div class="form-section">
+<label for="gender">Gender</label>
+<select id="gender">
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="other">Other</option>
+</select>
+</div>
+
+<div class="form-section">
+<label for="message">Message</label>
+<textarea id="message" placeholder="Type your message"></textarea>
+</div>
+
+<div class="form-section actions">
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+</div>
+
+</form>
+</div>
+
+</body>
+</html>

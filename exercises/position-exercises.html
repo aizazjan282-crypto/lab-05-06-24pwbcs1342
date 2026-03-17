@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Positioning Challenge</title>
+<link rel="stylesheet" href="../styles/position.css">
+</head>
+<body>
+
+<header class="header">
+<h1>Fixed Header</h1>
+<button id="openModal">Open Modal</button>
+</header>
+
+<div class="container">
+
+<aside class="sidebar">
+<h2>Sticky Sidebar</h2>
+<p>Sidebar stays in view when scrolling on desktop screens.</p>
+</aside>
+
+<main class="content">
+<h2>Main Content</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+<p>Scroll down to see the sticky sidebar effect.</p>
+<p>More content for scrolling demonstration...</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+</main>
+
+</div>
+
+<div id="myModal" class="modal">
+<div class="modal-content">
+<span class="close">&times;</span>
+<h2>Modal Dialog</h2>
+<p>Absolutely positioned modal that becomes full-screen on mobile.</p>
+</div>
+</div>
+
+<script>
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("openModal");
+const span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() { modal.style.display = "block"; }
+span.onclick = function() { modal.style.display = "none"; }
+window.onclick = function(event) { if(event.target == modal){ modal.style.display = "none"; } }
+</script>
+
+</body>
+</html>
